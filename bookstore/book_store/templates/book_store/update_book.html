@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改书籍</title>
+</head>
+<body>
+    <div>
+        <form action="/bookstore/update_book/{{ book.id }}" method="post">
+            <h3>书籍修改</h3>
+
+            <div>
+                <span>书名:</span>
+                <span>{{ book.bookname }}</span>
+            </div>
+            <div>
+                <span>新售价:</span>
+                <span><input type="text" name="newmprice" value="{{ book.marketprice }}"></span>
+
+            </div>
+            <div>
+                <input type="submit" value="提交">
+            </div>
+            <div>
+                <a href="/bookstore/">首页</a>
+                <a href="/bookstore/add_book">添加书籍</a>
+                <a href="/bookstore/book_list">查看书籍</a>
+            </div>
+        </form>
+        {% if res == 'xx' %}
+            <script>
+                alert('请输入正确价格!')
+            </script>
+        {% endif %}
+        {% if res == 'no' %}
+            <script>
+                alert('图书已经不存在!')
+            </script>
+        {% endif %}
+        {% if res == 'yes' %}
+            <script>
+                alert('价格更改成功!')
+            </script>
+        {% endif %}
+    </div>
+
+
+
+</body>
+</html>

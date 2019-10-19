@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加书籍</title>
+</head>
+<body>
+    <div>
+        <h3>添加书籍</h3>
+        <form action="add_book" method="post">
+        <div>
+            <span>书名:</span>
+            <span><input type="text" name="bookname"></span>
+        </div>
+        <div>
+            <span>定价:</span>
+            <span><input type="text" name="price"></span>
+        </div>
+        <div>
+            <span>售价:</span>
+            <span><input type="text" name="marketprice"></span>
+        </div>
+        <div>
+            <span>出版:</span>
+            <span><input type="text" name="pub"></span>
+        </div>
+            <div>
+                <input type="submit" value="提交">
+            </div>
+            <div>
+                <a href="/bookstore/">首页</a>
+                <a href="add_book">添加书籍</a>
+                <a href="book_list">查看书籍</a>
+            </div>
+        </form>
+
+        {% if res == 1 %}
+            <script>
+                alert('录入成功!')
+            </script>
+        {% elif res == 'xx' %}
+            <script>
+                alert('录入错误,请重新录入!')
+            </script>
+        {% endif %}
+    </div>
+
+
+
+
+</body>
+</html>
